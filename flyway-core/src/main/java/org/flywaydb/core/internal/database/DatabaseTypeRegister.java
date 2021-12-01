@@ -52,8 +52,8 @@ public class DatabaseTypeRegister {
 
 
 
-            ServiceLoader<DatabaseType> loader = ServiceLoader.load(DatabaseType.class, classLoader);
-            for (DatabaseType dt : loader) {
+            DatabaseType[] types = new DatabaseType[] { new org.flywaydb.core.internal.database.h2.H2DatabaseType() };
+            for (DatabaseType dt : types) {
                 registeredDatabaseTypes.add(dt);
             }
 
